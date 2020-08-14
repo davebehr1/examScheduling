@@ -115,16 +115,10 @@ def main():
     rooms = []
     read_file("test.exam",exams,periods,rooms,constraints)
 
-    # print(np.random.randint(5,size=(len(exams),2)))
     state = State(np.random.randint(5,size=(len(exams),2)),1)
-
+    
     get_schedule_with_hill_climbing(state)
 
-    # print(exams[0].studentAmount)
-
-    # print(periods[0].date)
-
-    # print(rooms[0].penalty)
 
 
 
