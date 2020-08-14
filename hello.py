@@ -1,7 +1,4 @@
 import numpy as np
-exams = []
-periods = []
-rooms = []
 
 class Exam:
     def __init__(self, duration, studentAmount):
@@ -34,9 +31,9 @@ class State:
 # def get_schedule_with_hill_climbing():
 #     while():
 
-def read_file():
+def read_file(file_name,exams,periods,rooms):
     lineType = ""
-    with open("test.exam") as f:
+    with open(file_name) as f:
         for line in f:
             if "Exams" in line:
                 line = f.readline()
@@ -76,19 +73,21 @@ def read_file():
                 rooms.append(r1)
 
 
-
-
-read_file()
-
-print(exams[0].studentAmount)
-
-print(periods[0].date)
-
-print(rooms[0].penalty)
-
-
 def main():
+    exams = []
+    periods = []
+    rooms = []
     random_start_state = np.random.randint(5,size=(len(exams),2))
-    print(random_start_state)
+    state = State(random_start_state,1)
+
+    read_file("test.exam",exams,periods,rooms)
+
+    print(exams[0].studentAmount)
+
+    print(periods[0].date)
+
+    print(rooms[0].penalty)
+
+
 
 main()
