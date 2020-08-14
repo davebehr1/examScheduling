@@ -26,10 +26,22 @@ class State:
     def __init__(self, state, heuristic):
         self.state = state
         self.heuristic = heuristic
+    def set_state(state):
+        self.state = state
 
 
-# def get_schedule_with_hill_climbing():
-#     while():
+def get_schedule_with_hill_climbing(current_state):
+    current_state.state
+    i = 1
+    while i < 10:
+        nextState = find_next_state(current_state)
+        i += 1
+        if nextState is None:
+            current_state.set_state(nextState)
+
+def find_next_state(current_state):
+    return current_state
+
 
 def read_file(file_name,exams,periods,rooms):
     lineType = ""
@@ -77,10 +89,12 @@ def main():
     exams = []
     periods = []
     rooms = []
-    random_start_state = np.random.randint(5,size=(len(exams),2))
-    state = State(random_start_state,1)
-
     read_file("test.exam",exams,periods,rooms)
+
+    print(np.random.randint(5,size=(len(exams),2)))
+    state = State(np.random.randint(5,size=(len(exams),2)),1)
+
+    get_schedule_with_hill_climbing(state)
 
     print(exams[0].studentAmount)
 
