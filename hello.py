@@ -10,6 +10,12 @@ class ScheduledExam:
         self.period = period
         self.room = room
 
+class Constraint:
+    def __init__(self,ctype,name,periods):
+        self.ctype = ctype
+        self.name = name
+        self.periods = periods
+
 class Room:
     def __init__(self, number, penalty):
         self.number = number
@@ -40,10 +46,14 @@ def get_schedule_with_hill_climbing(current_state):
             current_state.set_state(nextState)
 
 def find_next_state(current_state):
+    State nextState
+    for constraint in Constraints:
+        #if constraint is violated mutate state somehow
+    for constraint in 
     return current_state
 
 
-def read_file(file_name,exams,periods,rooms):
+def read_file(file_name,exams,periods,rooms,constraints):
     lineType = ""
     with open(file_name) as f:
         for line in f:
@@ -72,6 +82,19 @@ def read_file(file_name,exams,periods,rooms):
                 e1 = Exam(arr[0],len(arr))
                 exams.append(e1)
 
+            if(lineType == 'PeriodHardConstraints'):
+                arr = line.split(',')
+                c1 = Constraint("period",arr[1],arr[1:2])
+                constraints.append(e1)
+
+            if(lineType == 'RoomHardConstraints'):
+            arr = line.split(',')
+            if len(arr) > 1 :
+                c1 = Constraint("room",arr[1],arr[0])
+            else:
+                c1 = Constraint("room",arr[0],None)
+            constraints.append(c1)
+
             
             if(lineType == 'Periods'):
                 arr = line.split(',')
@@ -87,20 +110,21 @@ def read_file(file_name,exams,periods,rooms):
 
 def main():
     exams = []
+    constraints = []
     periods = []
     rooms = []
-    read_file("test.exam",exams,periods,rooms)
+    read_file("test.exam",exams,periods,rooms,constraints)
 
-    print(np.random.randint(5,size=(len(exams),2)))
+    # print(np.random.randint(5,size=(len(exams),2)))
     state = State(np.random.randint(5,size=(len(exams),2)),1)
 
     get_schedule_with_hill_climbing(state)
 
-    print(exams[0].studentAmount)
+    # print(exams[0].studentAmount)
 
-    print(periods[0].date)
+    # print(periods[0].date)
 
-    print(rooms[0].penalty)
+    # print(rooms[0].penalty)
 
 
 
