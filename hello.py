@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 class Exam:
     def __init__(self, duration, studentAmount):
@@ -45,12 +46,11 @@ def get_schedule_with_hill_climbing(current_state):
         if nextState is None:
             current_state.set_state(nextState)
 
-def find_next_state(current_state):
-    State nextState
-    for constraint in Constraints:
-        #if constraint is violated mutate state somehow
-    for constraint in 
-    return current_state
+# def find_next_state(current_state):
+#     for constraint in Constraints:
+#         #if constraint is violated mutate state somehow
+#     for constraint in 
+#     return current_state
 
 
 def read_file(file_name,exams,periods,rooms,constraints):
@@ -88,7 +88,7 @@ def read_file(file_name,exams,periods,rooms,constraints):
                 constraints.append(e1)
 
             if(lineType == 'RoomHardConstraints'):
-            arr = line.split(',')
+                arr = line.split(',')
             if len(arr) > 1 :
                 c1 = Constraint("room",arr[1],arr[0])
             else:
@@ -109,6 +109,8 @@ def read_file(file_name,exams,periods,rooms,constraints):
 
 
 def main():
+
+    df = pd.
     exams = []
     constraints = []
     periods = []
