@@ -1,0 +1,5 @@
+
+select exam_id, count(student_id) as studentCount from exam_student group by exam_id order by studentCount desc;
+
+
+SELECT period_id FROM ( SELECT time, exam_id, period_id FROM exam_period INNER JOIN PERIOD ON exam_period.period_id = period.id ORDER BY time ASC) T;
