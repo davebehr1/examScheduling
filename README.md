@@ -4,4 +4,8 @@
 
 ### run docker-compose up
 
-### before every run you have to delete all the tables in the database
+### click the link listed to open the application
+
+### navigate to work/ExamScheduler.ipynb
+
+### run all the cells
