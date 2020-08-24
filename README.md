@@ -2,8 +2,10 @@
 
 # instructions
 
-### run docker-compose up
+## RUN:
+### docker-compose up
 
+## THEN:
 ### click the link listed to open the application
 
 ### navigate to work/ExamScheduler.ipynb
