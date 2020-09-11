@@ -1,40 +1,6 @@
-# Copyright (c) Jupyter Development Team.
-# Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=jupyter/base-notebook
-FROM $BASE_CONTAINER
-
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
-
-USER root
-
-# Install all OS dependencies for fully functional notebook server
-RUN apt-get update && apt-get install -yq --no-install-recommends \
-    build-essential \
-    emacs-nox \
-    vim-tiny \
-    git \
-    inkscape \
-    jed \
-    libsm6 \
-    libxext-dev \
-    libxrender1 \
-    lmodern \
-    netcat \
-    python-dev \
-    # ---- nbconvert dependencies ----
-    texlive-xetex \
-    texlive-fonts-recommended \
-    texlive-plain-generic \
-    # ----
-    tzdata \
-    unzip \
-    nano \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-
-RUN mkdir src
-WORKDIR src/
-COPY . .
-
-# Switch back to jovyan to avoid accidental container runs as root
-USER $NB_UID
+FROM jupyter/minimal-notebook
+WORKDIR $HOME
+RUN python -m pip install --upgrade pip
+COPY requirements.txt ./requirements.txt
+RUN python -m pip  install -r requirements.txt
+RUN python -m pip install --upgrade --no-deps --force-reinstall notebook

@@ -24,7 +24,6 @@ pickleshare==0.7.4
 prettytable==0.7.2
 prometheus-client==0.8.0
 prompt-toolkit==1.0.15
-psycopg2-binary==2.8.5
 ptyprocess==0.6.0
 Pygments==2.6.1
 pyparsing==2.4.7
@@ -41,3 +40,9 @@ tqdm==4.48.2
 traitlets==4.3.2
 wcwidth==0.2.5
 webencodings==0.5.1
+pandas==1.1.2
+numpy==1.19.2
+MarkupSafe==1.1.1
+terminado==0.8.3
+pyzmq==19.0.2
+psycopg2-binary==2.8.5
