@@ -58,46 +58,46 @@ ALTER TABLE
 ALTER TABLE
 ALTER TABLE
 ALTER TABLE
-COPY 607
-COPY 607
-COPY 32380
-COPY 54
-COPY 54
-COPY 7
-COPY 7883
+COPY 242
+COPY 242
+COPY 18466
+COPY 16
+COPY 16
+COPY 8
+COPY 7909
  setval 
 --------
-    607
+    242
 (1 row)
 
  setval 
 --------
-    607
+    242
 (1 row)
 
  setval 
 --------
-  32380
+  18466
 (1 row)
 
  setval 
 --------
-     54
+     16
 (1 row)
 
  setval 
 --------
-     54
+     16
 (1 row)
 
  setval 
 --------
-      7
+      8
 (1 row)
 
  setval 
 --------
-   7883
+   7909
 (1 row)
 
 ALTER TABLE
